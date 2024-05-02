@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour {
 
     public float advanceRateSeconds;
     public float advanceDistance;
+    public float spawnSpacing;
     public int waveSize;
     public GameObject enemyPrefab;
     public Sprite[] sprites;
@@ -26,7 +27,8 @@ public class EnemySpawner : MonoBehaviour {
 
         advanceTimer -= Time.deltaTime;
         if (advanceTimer < 0) advanceTimer = advanceRateSeconds; else return;
-            Advance();
+
+        Advance();
     }
 
     private void Advance () {
@@ -36,7 +38,7 @@ public class EnemySpawner : MonoBehaviour {
 
         for (int i = -waveSize / 2; i < waveSize / 2; ++i) {
 
-            Vector3 position = transform.position + new Vector3(i * advanceDistance, 0, 0);
+            Vector3 position = transform.position + new Vector3(i * spawnSpacing, 0, 0);
             GameObject enemy = Instantiate(enemyPrefab, position, transform.rotation);
             enemy.GetComponent<SpriteRenderer>().color = new Color(
                 Random.Range(100, 255) / 255f,
@@ -48,7 +50,7 @@ public class EnemySpawner : MonoBehaviour {
         }
 
         if (advanceRateSeconds > 0.8f)
-            advanceRateSeconds -= 0.01f;
+            advanceRateSeconds -= 0.05f;
 
         wave++;
     }

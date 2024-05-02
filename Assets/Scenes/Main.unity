@@ -466,9 +466,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86185b88d548b97bc8373c5add412c31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  advanceRateSeconds: 10
+  advanceRateSeconds: 8
   advanceDistance: 0.3
-  waveSize: 16
+  spawnSpacing: 0.5
+  waveSize: 10
   enemyPrefab: {fileID: 8586835530676137153, guid: d2e08a23bc66eb8acb8b985286feff2f, type: 3}
   sprites:
   - {fileID: 21300000, guid: 7be07041e455966e4a318f4f386a657f, type: 3}
