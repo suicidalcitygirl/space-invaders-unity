@@ -36,7 +36,7 @@ public class EnemySpawner : MonoBehaviour {
 
         for (int i = -waveSize / 2; i < waveSize / 2; ++i) {
 
-            Vector3 position = transform.position + new Vector3(i, 0, 0);
+            Vector3 position = transform.position + new Vector3(i * advanceDistance, 0, 0);
             GameObject enemy = Instantiate(enemyPrefab, position, transform.rotation);
             enemy.GetComponent<SpriteRenderer>().color = new Color(
                 Random.Range(100, 255) / 255f,
