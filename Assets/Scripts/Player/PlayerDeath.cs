@@ -15,7 +15,8 @@ public class PlayerDeath : MonoBehaviour {
 	public int hitPoints;
 	public string[] killingTags;
     public GameObject objectToSpawnOnDestroy;
-	public GameObject objectToSpawnOnDamage;
+    public GameObject objectToSpawnOnDamage;
+	public GameObject gameOverMenu;
 
 	private void OnCollisionEnter2D (Collision2D collision) {
 
@@ -34,6 +35,7 @@ public class PlayerDeath : MonoBehaviour {
 				Instantiate(objectToSpawnOnDestroy, transform.position, transform.rotation);
 
                 isDead = true;
+                gameOverMenu.SetActive(true);
 
                 Destroy(gameObject);
 
