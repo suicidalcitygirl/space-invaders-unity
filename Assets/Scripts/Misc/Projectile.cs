@@ -17,4 +17,11 @@ public class Projectile : MonoBehaviour {
 		if (aliveTime < 0) Destroy(gameObject);
 		else aliveTime -= 1 * Time.deltaTime;
 	}
+
+    private void OnCollisionEnter2D (Collision2D collision) {
+
+        if (collision.collider.tag == "Player") return;
+
+        Destroy(gameObject);
+    }
 }

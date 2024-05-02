@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1323085789498759753}
   - component: {fileID: 9112345481631680456}
   - component: {fileID: 5377701950792832156}
+  - component: {fileID: 5882472729222269077}
   m_Layer: 0
   m_Name: Player Projectile
   m_TagString: Untagged
@@ -165,7 +166,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.02, y: 0.16}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -174,3 +175,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.03, y: 0.17}
   m_EdgeRadius: 0
+--- !u!114 &5882472729222269077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890719252892924122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8d45cd30ecdcf48930eba7cb72e55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToCreateOnStart: {fileID: 0}
+  objectToCreateOnDestroy: {fileID: 890719252892924122, guid: 43927e6712d839791837f96fa8fc5e59, type: 3}
+  objectToCreateOnCollision: {fileID: 0}
