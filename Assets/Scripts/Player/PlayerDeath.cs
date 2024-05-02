@@ -2,21 +2,24 @@
 using System;
 
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerDeath : MonoBehaviour {
 
     public static bool isDead = false;
-
-    private void Start () {
-
-        isDead = false;
-    }
 
 	public int hitPoints;
 	public string[] killingTags;
     public GameObject objectToSpawnOnDestroy;
     public GameObject objectToSpawnOnDamage;
 	public GameObject gameOverMenu;
+    public Slider HPBar;
+
+    private void Start () {
+
+        isDead = false;
+        HPBar.maxValue = hitPoints - 1;
+    }
 
 	private void OnCollisionEnter2D (Collision2D collision) {
 
@@ -29,6 +32,7 @@ public class PlayerDeath : MonoBehaviour {
 		if (damageTaken) {
 
 			hitPoints--;
+            HPBar.value = hitPoints - 1;
 
 			if (hitPoints <= 0) {
 
@@ -36,6 +40,7 @@ public class PlayerDeath : MonoBehaviour {
 
                 isDead = true;
                 gameOverMenu.SetActive(true);
+                HPBar.gameObject.SetActive(false);
 
                 Destroy(gameObject);
 
