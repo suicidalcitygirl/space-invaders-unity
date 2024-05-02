@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour {
 
     public static List<Enemy> enemies;
+    public static int wave = 0;
 
     public float advanceRateSeconds;
     public float advanceDistance;
@@ -15,11 +16,11 @@ public class EnemySpawner : MonoBehaviour {
     public Sprite[] sprites;
 
     private float advanceTimer;
-    [HideInInspector] int wave = 0;
 
     private void Start () {
 
         enemies = new List<Enemy>();
+        wave = 0;
     }
 
     private void Update () {
