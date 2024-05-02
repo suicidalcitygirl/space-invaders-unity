@@ -14,7 +14,8 @@ public class PlayerDeath : MonoBehaviour {
 
 	public int hitPoints;
 	public string[] killingTags;
-	public GameObject objectToSpawnOnDestroy;
+    public GameObject objectToSpawnOnDestroy;
+	public GameObject objectToSpawnOnDamage;
 
 	private void OnCollisionEnter2D (Collision2D collision) {
 
@@ -30,13 +31,14 @@ public class PlayerDeath : MonoBehaviour {
 
 			if (hitPoints <= 0) {
 
-				if (objectToSpawnOnDestroy != null)
-					Instantiate(objectToSpawnOnDestroy, transform.position, transform.rotation);
+				Instantiate(objectToSpawnOnDestroy, transform.position, transform.rotation);
 
                 isDead = true;
 
                 Destroy(gameObject);
-			}
+
+            } else
+                Instantiate(objectToSpawnOnDamage, transform.position, transform.rotation);
 		}
 	}
 }
