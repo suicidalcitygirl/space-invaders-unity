@@ -189,7 +189,7 @@ MonoBehaviour:
   hitPoints: 0
   killingTags:
   - Player Projectile
-  objectToSpawnOnDestroy: {fileID: 0}
+  objectToSpawnOnDestroy: {fileID: 6288984638859155083, guid: 835527817f82ff6468d442af5567eb32, type: 3}
 --- !u!114 &6073814617788773125
 MonoBehaviour:
   m_ObjectHideFlags: 0
