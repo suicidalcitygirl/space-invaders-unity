@@ -1,6 +1,7 @@
 
-using UnityEngine;
 using System.Collections.Generic;
+
+using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
 
@@ -22,6 +23,8 @@ public class EnemySpawner : MonoBehaviour {
     }
 
     private void Update () {
+
+        if (PlayerDeath.isDead) return;
 
         if (enemies.Count == 0 && wave != 0) Advance();
 

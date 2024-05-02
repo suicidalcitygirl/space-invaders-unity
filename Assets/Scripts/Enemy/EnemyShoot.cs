@@ -18,6 +18,8 @@ public class EnemyShoot : MonoBehaviour {
 
     private void Update () {
 
+        if (PlayerDeath.isDead) return;
+
         timer -= 1 * Time.deltaTime;
 		if (timer < 0) timer = fireRate; else return;
 
