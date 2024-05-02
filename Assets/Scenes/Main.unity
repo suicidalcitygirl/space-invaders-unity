@@ -817,6 +817,7 @@ MonoBehaviour:
   - Enemy
   - Enemy Projectile
   objectToSpawnOnDestroy: {fileID: 758381999649364001, guid: 40743e424943af550b0557879ff6bebc, type: 3}
+  objectToSpawnOnDamage: {fileID: 642092158398826417, guid: ba2f9fbaf02240d68b606bba7e908b07, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
