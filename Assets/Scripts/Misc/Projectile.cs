@@ -6,6 +6,7 @@ public class Projectile : MonoBehaviour {
     public float force;
 	public float aliveTime;
     public int damage;
+    public string ignoreTag;
 
     private void Start () {
 
@@ -20,7 +21,7 @@ public class Projectile : MonoBehaviour {
 
     private void OnCollisionEnter2D (Collision2D collision) {
 
-        if (collision.collider.tag == "Player") return;
+        if (collision.collider.tag == ignoreTag) return;
 
         Destroy(gameObject);
     }

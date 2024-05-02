@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 5377701950792832156}
   - component: {fileID: 5882472729222269077}
   m_Layer: 0
-  m_Name: Player Projectile
-  m_TagString: Player Projectile
+  m_Name: Invader Projectile
+  m_TagString: Enemy Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 21070256f65bc9a79b4fec70bf5bae7b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c41e4043577f39339481217cc302575, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,10 +127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383c5dada3019e4b68da939526c9c22c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 682
+  force: 420
   aliveTime: 4
   damage: 1
-  ignoreTag: Player
+  ignoreTag: Enemy
 --- !u!61 &5377701950792832156
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -189,5 +189,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToCreateOnStart: {fileID: 0}
-  objectToCreateOnDestroy: {fileID: 890719252892924122, guid: 43927e6712d839791837f96fa8fc5e59, type: 3}
+  objectToCreateOnDestroy: {fileID: 890719252892924122, guid: 107d1b36a93fd1e59ac7b4d098e401dd, type: 3}
   objectToCreateOnCollision: {fileID: 0}
