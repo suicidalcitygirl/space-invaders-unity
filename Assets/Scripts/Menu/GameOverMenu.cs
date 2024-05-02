@@ -27,11 +27,6 @@ public class GameOverMenu : MonoBehaviour {
         timer -= Time.deltaTime;
         if (timer < 0) timer = 1f; else return;
 
-        gameOverText.text = gameOverText.text == "Game Over!"
-            ? "Game Over"
-            : "Game Over!"
-        ;
-
         scoreText.text = scoreText.text == ""
             ? "Wave: " + EnemySpawner.wave + "  Score: " + ScoreMenu.score
             : ""
