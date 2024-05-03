@@ -1,12 +1,15 @@
+
 using System;
+using System.Collections;
+
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
-public class PlayerDeath : MonoBehaviour
-{
+
+public class PlayerDeath : MonoBehaviour {
 
     public static bool isDead = false;
-    public bool invisible;
+
+    public bool invincible;
     public int hitPoints;
     public string[] killingTags;
     public GameObject objectToSpawnOnDestroy;
@@ -14,30 +17,29 @@ public class PlayerDeath : MonoBehaviour
     public GameObject gameOverMenu;
     public Slider HPBar;
 
-    private void Start()
-    {
+    private void Start () {
 
         isDead = false;
         HPBar.maxValue = hitPoints - 1;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+    private void OnCollisionEnter2D (Collision2D collision) {
 
         bool damageTaken = false;
+
         if (killingTags.Length == 0) damageTaken = true;
         else if (Array.IndexOf(killingTags, collision.collider.tag) > -1)
             damageTaken = true;
 
-        if (damageTaken && !invisible)
-        {
-            invisible = true;
+        if (damageTaken && !invincible) {
+
+            invincible = true;
             StartCoroutine(Timer(3));
+
             hitPoints--;
             HPBar.value = hitPoints - 1;
 
-            if (hitPoints <= 0)
-            {
+            if (hitPoints <= 0) {
 
                 Instantiate(objectToSpawnOnDestroy, transform.position, transform.rotation);
 
@@ -49,13 +51,14 @@ public class PlayerDeath : MonoBehaviour
 
             }
             else
-                Instantiate(objectToSpawnOnDamage, transform.position, transform.rotation);
+                Instantiate(objectToSpawnOnDamage, transform.position, transform.rotation)
+                    .transform.SetParent(transform);
         }
 
-        IEnumerator Timer(float seconds)
-        {
+        IEnumerator Timer (float seconds) {
+
             yield return new WaitForSeconds(seconds);
-            invisible = false;
+            invincible = false;
         }
     }
 }
